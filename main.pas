@@ -162,6 +162,7 @@ type
     procedure sgSelectCell(Sender: TObject; Col: LongInt; Row: LongInt;
       var CanSelect: Boolean);
     procedure updateSG;
+    procedure updateFilename;
     procedure ReadConfig(AValue: String);
     procedure WriteConfig(AValue: String);
     procedure SetHeaders;
@@ -518,6 +519,110 @@ end;
 //_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_//
 /////////////////////////////////////////////////////////////////////////////////
 
+procedure TfrmMain.updateFilename;
+
+var
+  S, T: String;
+  i: Integer;
+
+begin
+  S := stFilename.Caption;
+
+  Case rg_Naming_Convention.ItemIndex of
+    0 : begin
+          T := edYear.Text;
+          if Length(T) > 4 then
+            T := Copy(T, 0, 4)
+          else
+            while Length(T) < 4 do
+              T := 'Y' + T;
+          for i := 1 to 4 do
+            S[i] := T[i];
+
+          Case edEvent_Type.ItemIndex of
+            0: S[5] := 'B';
+            1: S[5] := 'M';
+            2: S[5] := 'D';
+          end;
+          
+          Case edQuarter.ItemIndex of
+            0: S[6] := '1';
+            1: S[6] := '2';
+            2: S[6] := '3';
+            3: S[6] := '4';
+          end;
+
+          if length(edWinBMD_Add.Text) > 0 then
+            S[7] := edWinBMD_Add.Text[1];
+
+          T := edPage.Text;
+          if Length(T) > 4 then
+            T := Copy(T, 0, 4)
+          else
+            while Length(T) < 4 do
+              T := '0' + T;
+          for i := 1 to 4 do
+            S[7+i] := T[i];
+
+        end;
+    1 : begin
+          T := edYear.Text;
+          if Length(T) > 2 then
+            T := Copy(T, Length(T)-1, 2)
+          else
+            while Length(T) < 2 do
+              T := 'Y' + T;
+          for i := 1 to 2 do
+            S[i] := T[i];
+
+          Case edEvent_Type.ItemIndex of
+            0: S[3] := 'B';
+            1: S[3] := 'M';
+            2: S[3] := 'D';
+          end;
+
+          Case edQuarter.ItemIndex of
+            0: S[4] := '1';
+            1: S[4] := '2';
+            2: S[4] := '3';
+            3: S[4] := '4';
+          end;
+
+          T := edPage.Text;
+          if Length(T) > 4 then
+            T := Copy(T, 0, 4)
+          else
+            while Length(T) < 4 do
+              T := '0' + T;
+          for i := 1 to 4 do
+            S[i+4] := T[i];
+        end;
+  end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  stFilename.Caption := S;
+
+
+  SetHeaders;
+
+end;
+
+/////////////////////////////////////////////////////////////////////////////////
+//_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_//
+/////////////////////////////////////////////////////////////////////////////////
+
 procedure TfrmMain.edEvent_TypeChange(Sender: TObject);
 
 var
@@ -799,10 +904,10 @@ var
   i: Integer;
 
 begin
+  T := edPage.Text;
   Case rg_Naming_Convention.ItemIndex of
     0 : begin
           S := stFilename.Caption;
-          T := edPage.Text;
           if Length(T) > 4 then
             T := Copy(T, 0, 4)
           else
@@ -1130,14 +1235,14 @@ begin
     0: begin
          edwinBMD_Add.Visible := True;
          lbwinBMD_Add.Visible := True;
-         stFilename.Text := 'YYYYEQLnnnn.bmd';
-         //updateFilename;
+         stFilename.Text := '???????????.bmd';
+         updateFilename;
        end;
     1: begin
          edwinBMD_Add.Visible := False;
          lbwinBMD_Add.Visible := False;
-         stFilename.Text := 'YYEQnnnn.sca';
-         //updateFilename;
+         stFilename.Text := '????????.sca';
+         updateFilename;
        end;
     2: begin
          edwinBMD_Add.Visible := False;
@@ -1400,7 +1505,8 @@ begin
               if PickList.Items.Count < 9 then
                 PickList.Items.Add(IntToStr(PickList.Items.Count + 1)+'. ' + Districts.Strings[LCV]);
         end
-      else if (pos('other', Cells[Col,0]) > 1) or (pos('iven', Cells[Col,0]) > 1) then
+      else if //(pos('other', Cells[Col,0]) > 1) or
+              (pos('iven', Cells[Col,0]) > 1) then
         begin
           PickList.Items.Clear;
           for LCV := 0 to Names.Count - 1 do

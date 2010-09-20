@@ -1,0 +1,24 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TfrmSpecial','FORMDATA',[
+  'TPF0'#11'TfrmSpecial'#10'frmSpecial'#13'ActiveControl'#7#7'Button1'#7'Captio'
+  +'n'#6#29'Choose a special character...'#12'ClientHeight'#3'-'#1#11'ClientWid'
+  +'th'#3'-'#1#8'OnCreate'#7#16'frmSpecialCreate'#12'OnDeactivate'#7#14'FormDea'
+  +'ctivate'#7'OnPaint'#7#15'frmSpecialPaint'#13'PixelsPerInch'#2'K'#18'HorzScr'
+  +'ollBar.Page'#3','#1#18'VertScrollBar.Page'#3','#1#4'Left'#3#208#1#6'Height'
+  +#3'-'#1#3'Top'#3'+'#1#5'Width'#3'-'#1#8'HelpType'#7#9'htKeyword'#0#6'TPanel'
+  +#6'Panel1'#5'Align'#7#8'alBottom'#7'Caption'#6#6'Panel1'#12'ClientHeight'#2
+  +'"'#11'ClientWidth'#3'-'#1#11'FullRepaint'#8#8'TabOrder'#2#0#6'Height'#2'"'#3
+  +'Top'#3#11#1#5'Width'#3'-'#1#0#7'TButton'#7'Button1'#7'Caption'#6#5'Done.'#7
+  +'OnClick'#7#12'Button1Click'#8'TabOrder'#2#0#4'Left'#2#4#6'Height'#2#25#3'To'
+  +'p'#2#6#5'Width'#3'$'#1#0#0#0#11'TStringGrid'#9'sgSpecial'#5'Align'#7#8'alCl'
+  +'ient'#5'Color'#7#9'clBtnFace'#8'ColCount'#2#8#15'DefaultColWidth'#2#25#16'D'
+  +'efaultRowHeight'#2#24#10'FixedColor'#7#9'clBtnFace'#9'FixedCols'#2#0#9'Fixe'
+  +'dRows'#2#0#10'Font.Color'#7#7'clBlack'#11'Font.Height'#2#231#13'GridLineWid'
+  +'th'#2#0#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzLine'#10'goVertLine'
+  +#10'goHorzLine'#13'goRangeSelect'#14'goSmoothScroll'#0#8'RowCount'#2#8#10'Sc'
+  +'rollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#1#7'TabStop'#9#15'TitleFont.Color'
+  +#7#7'clBlack'#16'TitleFont.Height'#2#233#15'VisibleColCount'#2#8#15'VisibleR'
+  +'owCount'#2#8#10'OnDblClick'#7#17'sgSpecialDblClick'#6'Height'#3#11#1#5'Widt'
+  +'h'#3'-'#1#0#0#0
+]);
