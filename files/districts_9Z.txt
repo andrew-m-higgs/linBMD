@@ -17,8 +17,8 @@ Andover|2c
 Anglesey|11b
 Ashborne|7b
 Ashbourne|7b
-Ashby Z.|7a
 Ashby de la Zouch|7a
+Ashby Z.|7a
 Ashton under Lyne|8d
 Ashton|8d
 Askrigg|9d
@@ -443,9 +443,9 @@ Neath|11a
 New Forest|2b
 Newark|7b
 Newbury|2c
+Newcastle in Emlyn|11b
 Newcastle L.|6b
 Newcastle T.|10b
-Newcastle in Emlyn|11b
 Newcastle under Lyme|6b
 Newcastle upon Tyne|10b
 Newent|6a
@@ -590,8 +590,8 @@ St Austell|5c
 St Columb|5c
 St Faiths|4b
 St George Hanover Square|1a
-St George Southwark|1d
 St George in the East|1c
+St George Southwark|1d
 St Germans|5c
 St Giles|1b
 St Ives|3b
@@ -618,14 +618,15 @@ St. Thomas|5b
 Stafford|6b
 Staines|3a
 Stamford|7a
+Stanley|12v|user
 Stepney|1c
 Steyning|2b
 Stockbridge|2c
 Stockport|8a
 Stockton|10a
+Stoke and Wolstanton|6b
 Stoke Damerel|5b
 Stoke T.|6b
-Stoke and Wolstanton|6b
 Stoke upon Trent|6b
 Stokesley|9d
 Stone|6b
@@ -716,8 +717,8 @@ West Ham|4a
 West London|1c
 West Ward|10b
 Westbourne|2b
-Westbury S.|6a
 Westbury on Severn|6a
+Westbury S.|6a
 Westbury|5a
 Westhampnett|2b
 Westminster St Margaret|1a

@@ -1,0 +1,91 @@
+<html>
+<head>
+  <title>linBMD - Transcribed Data.</title>
+  <link rel="Stylesheet" href="../default.css" type="text/css">
+  <META name="keywords" lang="en" content="Genealogy,linBMD,FreeBMD,Open Source,linux">
+  <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+<h1>linBMD - Transcribed Data</h1>
+<p>Back to the <a href="index.html">index</a>.
+<p>The manual is split into two parts. One for the <a href="header.html">'Header Detail'</a> tab and one for the <a href="transcribed.html">'Transcribed Data'</a> tab.
+	
+<h3>Transcribed Data</h3>
+<ol>
+  <li>'Skip Surname' option
+    <blockquote>
+      <p>When you are transcribing many of the same surname, you can select this option so that focus is set automatically to the firstname and not the surname. The surname will be filled in.
+      <p><b>Note:</b> The surname will always be inserted even when "Skip Surname" is not selected. To change the surname simply start typing, when the surname cell has focus, to change it completely or hit F2 to go into edit mode and change the end of the surname.
+    </blockquote>
+  <li>'All Capitals for Surname' option
+    <blockquote>
+      <p>If, like most genealogists, you like surnames to be all capitals then select this option.
+    </blockquote>
+  <li>Pick lists
+    <blockquote>
+      <p>Pick list contents is automatic based on the column in which data is being entered. To select from the list simply press "CTRL" + the number of the item and it will be inserted. 
+    </blockquote>
+  <li>Short cut keys
+    <blockquote>
+      <table>
+        <tr>
+	  <td width=150><b>Key</b></td>
+	  <td><b>Use</b></td>
+	</tr>
+        <tr>
+	  <td>Esc</td>
+	  <td>Inserts the contents of the cell above into the current cell.</td>
+	</tr>
+        <tr>
+	  <td>F9</td>
+	  <td>Select a special character (<b>Hint:</b> After selecting the special character press F2 to re-enter edit mode on the cell. This is being worked on.)</td>
+	</tr>
+        <tr>
+	  <td>F2</td>
+	  <td>Set the current cell to edit mode and puts the cursor at the end of the contents</td>
+	</tr>
+        <tr>
+	  <td>Enter or Tab</td>
+	  <td>Move to the next cell. If the picklist only contains one item insert it into the current cell.</td>
+	</tr>
+        <tr>
+	  <td></td>
+	  <td></td>
+	</tr>
+        <tr>
+	  <td></td>
+	  <td></td>
+	</tr>
+      </table>	
+    </blockquote>
+  <li>Saving a file
+    <blockquote>
+      <p>Choose "File"|"Save". Files are automatically saved in the directory from which linBMD was run (typically /home/user/linBMD) using the file name shown to the right of the "Filenaming Convention" selection box. 
+    </blockquote>
+  <li>Opening a file
+    <blockquote>
+      <p>Choose "File"|"Open", select the file you want to open and it will be done. If the file was created using other software, please confirm that the file has been opened properly. 
+      <p>If not, I would like a copy of the file (at leaset the header and first 2 lines of the transcription) and the name of the program used to produce it so that I can ensure these are imported correctly in future.
+    </blockquote>
+</ol>
+<h3>Adding a Theory or Comment.</h3>
+<p>Adding a comment or theory is as simple as selecting a cell in the row you wish to add your comment or theory on and following the instructions.</p>
+<p>Remember that if your Theory or Comment applies to more than one line it should be added to the first line to which it applies and the number of lines affected should be included in brackets.</p>
+<p>For instance to create the following : </p>
+<pre>   JONE, Albert, District, 1a, 123
+   #THEORY(3) Surname should be JONES.
+   JONE, Charles, District, 3a, 324
+   JONE, David, District, 11a, 642
+   JONES, Edward, District, 9a, 912</pre>
+<p>you would need to type the following into the Theory edit box: "(3) Surname should be Jones.". Exactly the same applies to the Comment also.</p>
+<h3>Adding a District to the District list.</h3>
+<p>From time to time, when transcribing, you will come across districts which appear fairly regularly, but which are not in the District list provided. 
+   These can easily be added by selecting the cell containing the district you wish to add and right clicking. This will bring up a popup menu from 
+   which you need to choose "Add District". All Districts added in this way have "|user" appended to them to assist you if you ever want to 'clean' 
+   your District List again.</p>
+ <p>Remember, though, that it will only be added to the district list associated with the current Volume Format (9z, 99, XX).</p>
+ <p>It will be immediately available to you.</p>
+<h3>Comments and Feedback Welcome</h3>
+<p>Please send comments and requests to <a href="mailto:phos4us@gmail.com">Andrew Higgs</a>
+</body>
+</html>

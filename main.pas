@@ -27,6 +27,7 @@
 }
 
 
+
 unit main; 
 
 {$mode objfpc}{$H+}
@@ -37,13 +38,14 @@ interface
 uses
   Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ExtDlgs, EditBtn, ExtCtrls, Buttons, Grids, global, Menus, special, about,
-  ComCtrls, cal, help, IniPropStorage, XMLPropStorage, MaskEdit;
+  ComCtrls, cal, help;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    addDistrict: TMenuItem;
     btnSave_Config: TBitBtn;
     cd: TCalendarDialog;
     cbOwn_Dates: TCheckBox;
@@ -68,10 +70,6 @@ type
     edYour_Name: TEdit;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
-    Label22: TLabel;
-    Label23: TLabel;
-    Label24: TLabel;
-    rgNaming_Convention: TGroupBox;
     Image1: TImage;
     ImageList1: TImageList;
     Label1: TLabel;
@@ -79,23 +77,18 @@ type
     Label11: TLabel;
     Label12: TLabel;
     Label13: TLabel;
-    Label14: TLabel;
     Label15: TLabel;
     Label16: TLabel;
     Label17: TLabel;
     Label18: TLabel;
     Label19: TLabel;
     Label2: TLabel;
-    Label20: TLabel;
-    Label21: TLabel;
     Label3: TLabel;
     addComment: TMenuItem;
-    Label4: TLabel;
+    addFirstname: TMenuItem;
     miFile_Save_And_Complete: TMenuItem;
     mi_Config_Skip_Firstname: TMenuItem;
-    rb_winBMD: TRadioButton;
-    rb_custom: TRadioButton;
-    rb_speedBMD: TRadioButton;
+    rg_Naming_Convention: TRadioGroup;
     stModified: TLabel;
     stCreated: TLabel;
     lbwinBMD_Add: TLabel;
@@ -131,6 +124,8 @@ type
     procedure MenuItem1Click(Sender: TObject);
     procedure Notebook1PageChanged(Sender: TObject);
     procedure addCommentClick(Sender: TObject);
+    procedure addDistrictClick(Sender: TObject);
+    procedure addFirstnameClick(Sender: TObject);
     procedure btnCreatedClick(Sender: TObject);
     procedure btnModifiedClick(Sender: TObject);
     procedure btnSave_ConfigClick(Sender: TObject);
@@ -138,8 +133,9 @@ type
     procedure cbOwn_DatesClick(Sender: TObject);
     procedure cbSkip_FirstnameChange(Sender: TObject);
     procedure cbSkip_SurnameChange(Sender: TObject);
+    procedure cg1ItemClick(Sender: TObject; Index: integer);
     procedure edEvent_TypeChange(Sender: TObject);
-    procedure edLetter1KeyPress(Sender: TObject; var Key: char);
+    procedure edLetterKeyPress(Sender: TObject; var Key: char);
     procedure edPageKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure edQuarterChange(Sender: TObject);
     procedure edVolume_FormatChange(Sender: TObject);
@@ -154,9 +150,8 @@ type
     procedure mi_Config_Skip_SurnameClick(Sender: TObject);
     procedure mi_File_ExitClick(Sender: TObject);
     procedure mi_Help_TipsClick(Sender: TObject);
-    procedure rb_customClick(Sender: TObject);
-    procedure rb_speedBMDClick(Sender: TObject);
-    procedure rb_winBMDClick(Sender: TObject);
+    procedure rgNaming_ConventionClick(Sender: TObject);
+    procedure sgEditingDone(Sender: TObject);
     procedure sgKeyPress(Sender: TObject; var Key: char);
     procedure sgKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure miFile_OpenClick(Sender: TObject);
@@ -164,6 +159,8 @@ type
     procedure miFile_SaveClick(Sender: TObject);
     procedure miFile_StartNewClick(Sender: TObject);
     procedure miHelp_AboutClick(Sender: TObject);
+    procedure sgSelectCell(Sender: TObject; Col: LongInt; Row: LongInt;
+      var CanSelect: Boolean);
     procedure updateSG;
     procedure ReadConfig(AValue: String);
     procedure WriteConfig(AValue: String);
@@ -179,10 +176,10 @@ type
 var
   frmMain: TfrmMain;
   New_Word, First_Time: Boolean;
-  Names, Districts, Supp_Districts, Fields, Widths: TStringList;
+  Names, Districts, Supp_Districts, Fields, Widths, Theories: TStringList;
   Search_String: String;
   Character: Char;
-  Headers, old_Headers, Year, old_Year: Integer;
+  Headers, old_Headers, Year, old_Year, FieldCount, Current_Column, Current_Row: Integer;
 
 const
   NAME_LIST = 1;
@@ -192,6 +189,7 @@ const
 implementation
 
 { TfrmMain }
+
 
 /////////////////////////////////////////////////////////////////////////////////
 //_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_//
@@ -228,6 +226,7 @@ begin
                      Widths.Add('50');
                      Fields.Add('Page');
                      Widths.Add('50');
+                     FieldCount := Fields.Count;
                      old_Headers := Headers;
                      UpdateSG;
                    end;
@@ -253,6 +252,7 @@ begin
                      Widths.Add('50');
                      Fields.Add('Page');
                      Widths.Add('50');
+                     FieldCount := Fields.Count;
                      old_Headers := Headers;
                      UpdateSG;
                    end;
@@ -286,6 +286,7 @@ begin
                      Widths.Add('50');
                      Fields.Add('Page');
                      Widths.Add('50');
+                     FieldCount := Fields.Count;
                      old_Headers := Headers;
                      UpdateSG;
                    end;
@@ -311,6 +312,7 @@ begin
                      Widths.Add('50');
                      Fields.Add('Page');
                      Widths.Add('50');
+                     FieldCount := Fields.Count;
                      old_Headers := Headers;
                      UpdateSG;
                    end;
@@ -345,6 +347,7 @@ begin
                      Fields.Add('Volume');
                      Widths.Add('50');
                      Fields.Add('Page');
+                     FieldCount := Fields.Count;
                      Widths.Add('50');
                      old_Headers := Headers;
                      if Year < 1865 then
@@ -375,6 +378,7 @@ begin
                      Widths.Add('50');
                      Fields.Add('Page');
                      Widths.Add('50');
+                     FieldCount := Fields.Count;
                      old_Headers := Headers;
                      UpdateSG;
                    end;
@@ -394,8 +398,7 @@ var
   S, CompName: String;
   F: TextFile;
   Component: TComponent;
-  i: Integer;
-  
+
 begin
   if FileExists(AValue) then
     begin
@@ -410,13 +413,7 @@ begin
             (Component as TWinControl).Text := Copy(S, Pos('=', S)+1, Length(S));
           if pos('rgNaming', CompName) > 0 then
             begin
-              i := StrToInt(Copy(S, Pos('=', S)+1, Length(S)));
-              case i of
-                0 : rb_winBMD.Checked := True;
-                1 : rb_speedBMD.Checked := True;
-                2 : rb_custom.Checked := True;
-//                * : rb_winBMD.Checked := True;
-              end;
+              rg_Naming_Convention.ItemIndex := 0;
             end;
           if pos('cbOwn', CompName) > 0 then
             (Component as TCheckBox).Checked := Copy(S, Pos('=', S)+1, Length(S)) = 'True';
@@ -437,12 +434,11 @@ var
 begin
   Assignfile(F, AValue);
   Rewrite(F);
-  if rb_Custom.Checked then
-    S := 'rgNaming_Convention=2'
-  else if rb_speedBMD.Checked then
-    S := 'rgNaming_Convention=1'
-  else
-    S := 'rgNaming_Convention=0';
+  Case rg_Naming_Convention.ItemIndex of
+    0 : S := 'rgNaming_Convention=0';
+    1 : S := 'rgNaming_Convention=1';
+    2 : S := 'rgNaming_Convention=2';
+  end;
   Writeln(F, S);
   S := 'edwinBMD_Add=' + edwinBMD_Add.Text;
   Writeln(F, S);
@@ -526,16 +522,11 @@ procedure TfrmMain.edEvent_TypeChange(Sender: TObject);
 
 var
   S: String;
-  i: Integer;
-  
+
 begin
-  if rb_Custom.Checked then
-    i := 2
-  else if rb_speedBMD.Checked then
-    i := 1
-  else
-    i := 0;
-  Case i of
+  if not Modified then
+    Modified := True;
+  Case rg_Naming_Convention.ItemIndex of
     0 : begin
           S := stFilename.Caption;
           Case edEvent_Type.ItemIndex of
@@ -556,10 +547,6 @@ begin
         end;
   end;
   SetHeaders;
-end;
-
-procedure TfrmMain.edLetter1KeyPress(Sender: TObject; var Key: char);
-begin
 end;
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -594,6 +581,10 @@ begin
     sg.SetFocus;
   setCaption;
 end;
+/////////////////////////////////////////////////////////////////////////////////
+//_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_//
+/////////////////////////////////////////////////////////////////////////////////
+
 
 procedure TfrmMain.addCommentClick(Sender: TObject);
 
@@ -603,11 +594,88 @@ var
 begin
   if InputQuery('Enter your comment','Comment:',S) then
     begin
-      //sg.Row;
+      if not Assigned(Theories) then
+        Theories := TStringList.Create;
+      if pos('(', S) = 1 then
+        Theories.Add(sg.Cells[0, sg.Row] + '|c|' + S)
+      else
+        Theories.Add(' ' + sg.Cells[0, sg.Row] + '|c|' + S);
     end;
-//    sg.Rows[sg.];
-//    Showmessage(S);
   sg.setFocus;
+end;
+
+/////////////////////////////////////////////////////////////////////////////////
+//_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_//
+/////////////////////////////////////////////////////////////////////////////////
+
+procedure TfrmMain.addDistrictClick(Sender: TObject);
+
+var
+  d, v, i: Integer;
+  
+begin
+  d := -1;
+  v := -1;
+  for i := 0 to sg.ColCount - 1 do
+    begin
+      if pos('istrict', sg.Cells[i, 0]) > 0 then
+        d := i;
+      if pos('olume', sg.Cells[i, 0]) > 0 then
+        v := i;
+    end;
+  if (d > -1) and (v > -1) then
+    Districts.Add(sg.Cells[d, sg.Row] + '|' + sg.Cells[v, sg.Row] + '|user')
+  else
+    Showmessage ('There was a problem determining the District and Volume cells. District not added.');
+  Case edVolume_Format.ItemIndex of
+    0: begin
+         Try
+           Districts.SaveToFile(ExtractFilePath(Application.Exename) + 'files/districts_9Z.txt');
+         Except
+           Showmessage('File - "files/districts_9Z.txt" could not be saved.');
+         end;
+       end;
+    1: begin
+         Try
+           Districts.SaveToFile(ExtractFilePath(Application.Exename) + 'files/districts_99.txt');
+         Except
+           Showmessage('File - "files/districts_99.txt" could not be saved.');
+         end;
+       end;
+    2: begin
+         Try
+           Districts.SaveToFile(ExtractFilePath(Application.Exename) + 'files/districts_XX.txt');
+         Except
+           Showmessage('File - "files/districts_XX.txt" could not be saved.');
+         end;
+       end;
+  end;
+end;
+
+/////////////////////////////////////////////////////////////////////////////////
+//_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_//
+/////////////////////////////////////////////////////////////////////////////////
+
+procedure TfrmMain.addFirstnameClick(Sender: TObject);
+
+var
+  i, n: Integer;
+  
+begin
+  for i := 0 to sg.ColCount - 1 do
+    begin
+      if pos('iven', sg.Cells[i, 0]) > 0 then
+        n := i;
+    end;
+  if n > -1 then
+    Names.Add(sg.Cells[n, sg.Row] + '|user')
+  else
+    Showmessage ('There was a problem determining the Firstname cells. Firstname not added.');
+  Try
+    Names.SaveToFile(ExtractFilePath(Application.Exename) + 'files/firstnames.txt');
+   Except
+    Showmessage('File - "files/firstnames.txt" was not changed.');
+   end;
 end;
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -621,7 +689,14 @@ var
   
 begin
   if InputQuery('Enter your theory','Theory:',S) then
-    Showmessage(S);
+    begin
+      if not Assigned(Theories) then
+        Theories := TStringList.Create;
+      if pos('(', S) = 1 then
+        Theories.Add(sg.Cells[0, sg.Row] + '|t|' + S)
+      else
+        Theories.Add(' ' + sg.Cells[0, sg.Row] + '|t|' + S);
+    end;
   sg.setFocus;
 end;
 
@@ -673,19 +748,43 @@ end;
 procedure TfrmMain.cbAll_Caps_SurnameChange(Sender: TObject);
 begin
   mi_Config_All_Caps.Checked := cbAll_Caps_Surname.Checked;
-  sg.SetFocus;
 end;
 
 procedure TfrmMain.cbSkip_FirstnameChange(Sender: TObject);
 begin
   mi_Config_Skip_Firstname.Checked := cbSkip_Firstname.Checked;
-  sg.SetFocus;
 end;
 
 procedure TfrmMain.cbSkip_SurnameChange(Sender: TObject);
 begin
   mi_Config_Skip_Surname.Checked := cbSkip_Surname.Checked;
+end;
+
+/////////////////////////////////////////////////////////////////////////////////
+//_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_//
+/////////////////////////////////////////////////////////////////////////////////
+
+procedure TfrmMain.cg1ItemClick(Sender: TObject; Index: integer);
+begin
+  mi_Config_All_Caps.Checked := cbAll_Caps_Surname.Checked;
+  mi_Config_Skip_Surname.Checked := cbSkip_Surname.Checked;
+  mi_Config_Skip_Firstname.Checked := cbSkip_Firstname.Checked;
   sg.SetFocus;
+end;
+
+/////////////////////////////////////////////////////////////////////////////////
+//_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_//
+/////////////////////////////////////////////////////////////////////////////////
+
+procedure TfrmMain.edLetterKeyPress(Sender: TObject; var Key: char);
+
+var
+  S: String;
+
+begin
+  S := stFilename.Caption;
+  S[7] := UpCase(Key);
+  stFilename.Caption := S;
 end;
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -697,16 +796,10 @@ procedure TfrmMain.edPageKeyUp(Sender: TObject; var Key: Word;
 
 var
   S, T: String;
-  i,j: Integer;
+  i: Integer;
 
 begin
-  if rb_Custom.Checked then
-    j := 2
-  else if rb_speedBMD.Checked then
-    j := 1
-  else
-    j := 0;
-  Case j of
+  Case rg_Naming_Convention.ItemIndex of
     0 : begin
           S := stFilename.Caption;
           T := edPage.Text;
@@ -741,16 +834,11 @@ procedure TfrmMain.edQuarterChange(Sender: TObject);
 
 var
   S: String;
-  i: Integer;
 
 begin
-  if rb_Custom.Checked then
-    i := 2
-  else if rb_speedBMD.Checked then
-    i := 1
-  else
-    i := 0;
-  Case i of
+  if not Modified then
+    Modified := True;
+  Case rg_Naming_Convention.ItemIndex of
     0 : begin
           S := stFilename.Caption;
           Case edQuarter.ItemIndex of
@@ -780,6 +868,8 @@ end;
 
 procedure TfrmMain.edVolume_FormatChange(Sender: TObject);
 begin
+  if not Modified then
+    Modified := True;
   if not Assigned(Districts) then
     Districts := TStringList.Create;
   Districts.Clear;
@@ -817,16 +907,12 @@ procedure TfrmMain.edYearChange(Sender: TObject);
 
 var
   S, T: String;
-  i,j: Integer;
+  i: Integer;
 
 begin
-  if rb_Custom.Checked then
-    j := 2
-  else if rb_speedBMD.Checked then
-    j := 1
-  else
-    j := 0;
-  Case j of
+  if not Modified then
+    Modified := True;
+  Case rg_Naming_Convention.ItemIndex of
     0 : begin
           S := stFilename.Caption;
           T := edYear.Text;
@@ -871,12 +957,6 @@ end;
 /////////////////////////////////////////////////////////////////////////////////
 
 procedure TfrmMain.Create(Sender: TObject);
-
-var
-  S, LB: String;
-  i: Integer;
-  D: TDate;
-  
 begin
   setCaption;
 //Create Districts...
@@ -898,6 +978,7 @@ begin
   New_Word := True;
   First_Time := True;
   Skip_Age := False;
+  Modified := False;
 end;
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -919,11 +1000,11 @@ var
   S: String;
 
 begin
+  if not Modified then
+    Modified := True;
   S := stFilename.Caption;
-  if Length(edWinBMD_Add.Text) > 0 then
-    S[7] := edwinBMD_Add.Text[1]
-  else
-    S[7] := 'L';
+  if Length(edwinBMD_Add.Text) > 0 then
+    S[7] := edwinBMD_Add.Text[1];
   stFilename.Caption := S;
 end;
 
@@ -950,7 +1031,6 @@ end;
 procedure TfrmMain.frmMainActivate(Sender: TObject);
 
 var
-  S: String;
   D: TDate;
   
 begin
@@ -965,6 +1045,7 @@ begin
           stModified.Text := getStrDate(D);
         end;
     end;
+  Modified := False;
 end;
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -1008,8 +1089,22 @@ end;
 /////////////////////////////////////////////////////////////////////////////////
 
 procedure TfrmMain.mi_File_ExitClick(Sender: TObject);
+
+var
+  buttonSelected: Integer;
+  
 begin
-  frmMain.Close;
+  if Modified then
+    begin
+      buttonSelected :=  MessageDlg('File modified.', 'The file has been modified. Would you like to save before closing?', mtConfirmation, [mbYes, mbNo, mbCancel], 0);
+      if buttonSelected = mrCancel then
+        exit;
+      if buttonSelected = mrYes then
+        miFile_SaveClick(nil);
+      frmMain.Close;
+   end
+  else
+    frmMain.Close;
 end;
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -1025,34 +1120,44 @@ end;
 //_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_//
 /////////////////////////////////////////////////////////////////////////////////
 
-procedure TfrmMain.rb_customClick(Sender: TObject);
+procedure TfrmMain.rgNaming_ConventionClick(Sender: TObject);
 
 Var
   S: String;
 
 begin
-  edwinBMD_Add.Visible := False;
-  lbwinBMD_Add.Visible := False;
-  stFilename.Text := 'custom.csv';
-  S := stFilename.Caption;
-  if InputQuery('Choose a filename','Own filename:',S) then
-    stFilename.Caption := S;
+  Case rg_Naming_Convention.ItemIndex of
+    0: begin
+         edwinBMD_Add.Visible := True;
+         lbwinBMD_Add.Visible := True;
+         stFilename.Text := 'YYYYEQLnnnn.bmd';
+         //updateFilename;
+       end;
+    1: begin
+         edwinBMD_Add.Visible := False;
+         lbwinBMD_Add.Visible := False;
+         stFilename.Text := 'YYEQnnnn.sca';
+         //updateFilename;
+       end;
+    2: begin
+         edwinBMD_Add.Visible := False;
+         lbwinBMD_Add.Visible := False;
+         stFilename.Text := 'custom.csv';
+         S := stFilename.Caption;
+         if InputQuery('Choose a filename','Own filename:',S) then
+           stFilename.Caption := S;
+       end;
+  end;
 end;
 
-procedure TfrmMain.rb_winBMDClick(Sender: TObject);
-begin
-  edwinBMD_Add.Visible := True;
-  lbwinBMD_Add.Visible := True;
-  stFilename.Text := 'YYYYEQLnnnn.bmd';
-  //updateFilename;
-end;
+/////////////////////////////////////////////////////////////////////////////////
+//_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_-¯-_//
+/////////////////////////////////////////////////////////////////////////////////
 
-procedure TfrmMain.rb_speedBMDClick(Sender: TObject);
+procedure TfrmMain.sgEditingDone(Sender: TObject);
 begin
-  edwinBMD_Add.Visible := False;
-  lbwinBMD_Add.Visible := False;
-  stFilename.Text := 'YYEQnnnn.sca';
-  //updateFilename;
+  if not Modified then
+    Modified := True;
 end;
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -1085,14 +1190,10 @@ procedure TfrmMain.sgKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
 
 var
   LCV, Offset, x: Integer;
-  S: String;
   NewRow: Boolean;
+  Volume: String;
   
 procedure get_From_PickList(id: Integer);
-
-var
-  S: String;
-  
 begin
   if PickList.Items.Count > id then
     begin
@@ -1108,17 +1209,26 @@ begin
             WriteLn('  What is kept from cell - ' + Copy(sg.Cells[sg.Col, sg.Row], 0, lpos(UpCase(Search_String), UpCase(sg.Cells[sg.Col, sg.Row]))-1));
             WriteLn('  Listbox Item           - ' + Copy(PickList.Items[id], pos('. ', PickList.Items[id]) + 2, Length(PickList.Items[id])));
           {$ENDIF}
-          if  Copy(sg.Cells[sg.Col, sg.Row], 0, pos(UpCase(Search_String), UpCase(sg.Cells[sg.Col, sg.Row]))-Length(Search_String)) <> '' then
-            sg.Cells[sg.Col, sg.Row] := Copy(sg.Cells[sg.Col, sg.Row], 0, lpos(UpCase(Search_String), UpCase(sg.Cells[sg.Col, sg.Row]))-1) + Copy(PickList.Items[id],pos('. ', PickList.Items[id]) + 2, Length(PickList.Items[id])) + ' '
+          
+          if pos('|', PickList.Items[id]) > 0 then
+            Name := Copy(PickList.Items[id], pos('. ', PickList.Items[id]) + 2, pos('|', PickList.Items[id]) - (pos('. ', PickList.Items[id]) + 2))
           else
-            sg.Cells[sg.Col, sg.Row] := Copy(PickList.Items[id], lpos('. ', PickList.Items[id]) + 2, Length(PickList.Items[id])) + ' '
+            Name := Copy(PickList.Items[id],pos('. ', PickList.Items[id]) + 2, Length(PickList.Items[id]));
+          if  Copy(sg.Cells[sg.Col, sg.Row], 0, pos(UpCase(Search_String), UpCase(sg.Cells[sg.Col, sg.Row]))-Length(Search_String)) <> '' then
+            sg.Cells[sg.Col, sg.Row] := Copy(sg.Cells[sg.Col, sg.Row], 0, lpos(UpCase(Search_String), UpCase(sg.Cells[sg.Col, sg.Row]))-1) + Name + ' '
+          else
+            sg.Cells[sg.Col, sg.Row] := Name + ' '
         end
       else if pos('istrict', sg.cells[sg.col, 0]) > 0 then
         begin
           OffSet := pos(' ', PickList.Items[id]) + 1;
           sg.Col := sg.Col + 1;
           sg.Cells[sg.col-1, sg.row] := Copy(PickList.Items[id], OffSet, pos('|', PickList.Items[id]) - OffSet);
-          sg.Cells[sg.col, sg.row] := Copy(PickList.Items[id], pos('|', PickList.Items[id]) + 1, length(PickList.Items[id]));
+          Volume := Copy(PickList.Items[id], pos('|', PickList.Items[id]) + 1, length(PickList.Items[id]));
+          if pos('|', Volume) > 0 then
+            sg.Cells[sg.col, sg.row] := Copy(Volume, 0, pos('|', Volume) - 1)
+          else
+            sg.Cells[sg.col, sg.row] := Copy(Volume, 0, length(Volume));
           sg.Col := sg.Col + 1;
         end;
     end;
@@ -1135,7 +1245,6 @@ begin
  //CHECK IF CTRL-S HASS BEEN PRESSED
       if ((Key  =  83) and (ssCTRL in Shift)) then
         begin
-//          showmessage('save');
           miFile_Save1.Click;
         end;
 
@@ -1220,11 +1329,18 @@ begin
                     begin
                       Col := Col + 1;
                       Cells[col-1, row] := Copy(PickList.Items[0], OffSet, pos('|', PickList.Items[0]) - OffSet);
-                      Cells[col, row] := Copy(PickList.Items[0], pos('|', PickList.Items[0]) + 1, length(PickList.Items[0]));
+                      Volume := Copy(PickList.Items[0], pos('|', PickList.Items[0]) + 1, length(PickList.Items[0]));
+                      if pos('|', Volume) > 0 then
+                        Cells[col, row] := Copy(Volume, 0, pos('|', Volume) - 1)
+                      else
+                        Cells[col, row] := Volume;
                     end
                   else
                     begin
-                      Cells[col, row] := Copy(Cells[col, row], 0, lpos(' ', Cells[col, row]))  + Copy(PickList.Items[0], OffSet, Length(PickList.Items[0]));
+                      if pos('|', PickList.Items[0]) > 0 then
+                        Cells[col, row] := Copy(Cells[col, row], 0, lpos(' ', Cells[col, row]))  + Copy(PickList.Items[0], OffSet, pos('|', (PickList.Items[0])))
+                      else
+                        Cells[col, row] := Copy(Cells[col, row], 0, lpos(' ', Cells[col, row]))  + Copy(PickList.Items[0], OffSet, Length(PickList.Items[0]));
                     end;
                   New_Word := True;
                   Search_String := '';
@@ -1366,20 +1482,26 @@ var
   F: TextFile;
   S: String;
   Page: Boolean;
-  Line_Number, x: Integer;
+  Line_Number, x, buttonSelected: Integer;
   i: Integer;
 
 begin
+  if Assigned(Theories) then
+    Theories.Clear;
   od.InitialDir := ExtractFilePath(Application.ExeName);
   od.Filter := '*.bmd';
   Line_Number := 1;
   Page := False;
+  if Modified then
+    begin
+      buttonSelected :=  MessageDlg('File modified.', 'The file has been modified. Would you like to save before opening another file?', mtConfirmation, [mbYes, mbNo, mbCancel], 0);
+      if buttonSelected = mrCancel then
+        exit;
+      if buttonSelected = mrYes then
+        miFile_SaveClick(nil);
+   end;
   if od.Execute then
     begin
-      Modified := False;
-      if Modified then
-// MAKE THIS A MODAL DIALOG
-        exit;
       AssignFile(F, od.Filename);
       Reset(F);
       sg.RowCount := 2;
@@ -1447,7 +1569,7 @@ begin
                   Page := True
                 end;
             end
-          else if (pos('#', S) = 1) then
+          else if ((pos('#', S) = 1) and not ((pos('#THEORY', S) > 0) or (pos('#COMMENT', S) > 0)))  then
             begin
               S := Copy(S, 3, Length(S));
               with frmMain do
@@ -1475,36 +1597,58 @@ begin
             end
           else
             begin
-              if Line_Number > 1 then
-                sg.RowCount := sg.RowCount +1 ;
-              with sg do
+              if S <> '' then
                 begin
-                  Cells[0, Line_Number] := IntToStr(Line_Number);
-                  for x := 1 to ColCount - 1 do
+                  if Line_Number > 1 then
+                    sg.RowCount := sg.RowCount +1 ;
+                  with sg do
                     begin
-                      if pos(',', S) > 0 then
+                      Cells[0, Line_Number] := IntToStr(Line_Number);
+                      if pos('#', S) > 0 then
                         begin
-                          if pos('"', S) = 1 then
+                          if pos('#', S) > 0 then
                             begin
-                              S := Copy(S, 2, Length(S));
-                              Cells[x, Line_Number] := Copy(S, 0, pos('"', S)-1);
-                              S := Copy(S, pos('"', S) + 2, Length(S));
-                            end
-                          else
-                            begin
-                              Cells[x, Line_Number] := Copy(S, 0, pos(',', S)-1);
-                              S := Copy(S, pos(',', S) + 1, Length(S));
+                              Line_Number := Line_Number - 1;
+                              if not Assigned(Theories) then
+                                Theories := TStringList.Create;
+                              if pos('#THEORY', S) > 0 then
+                                begin
+                                  Theories.Add(IntToStr(Line_Number) + '|t|' + Copy(S, pos('#THEORY', S) + 7, Length(S)));
+                                end;
+                              if pos('#COMMENT', S) > 0 then
+                                begin
+                                  Theories.Add(IntToStr(Line_Number) + '|c|' + Copy(S, pos('#COMMENT', S) + 8, Length(S)));
+                                end;
                             end;
                         end
                       else
-                        Cells[x, Line_Number] := Copy(S, 0, Length(S));
+                        for x := 1 to FieldCount - 1 do
+                          begin
+                            if pos(',', S) > 0 then
+                              begin
+                                if pos('"', S) = 1 then
+                                  begin
+                                    S := Copy(S, 2, Length(S));
+                                    Cells[x, Line_Number] := Copy(S, 0, pos('"', S)-1);
+                                    S := Copy(S, pos('"', S) + 2, Length(S));
+                                  end
+                                else
+                                  begin
+                                    Cells[x, Line_Number] := Copy(S, 0, pos(',', S)-1);
+                                    S := Copy(S, pos(',', S) + 1, Length(S));
+                                  end;
+                              end
+                            else
+                              Cells[x, Line_Number] := Copy(S, 0, Length(S));
+                          end;
+                      Line_Number := Line_Number + 1;
                     end;
-                  Line_Number := Line_Number + 1;
                 end;
             end;
         end;
     end;
   CloseFile(F);
+  Modified := False;
 end;
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -1525,8 +1669,8 @@ procedure TfrmMain.miFile_SaveClick(Sender: TObject);
 
 var
   F: TextFile;
-  i,j: Integer;
-  S, start, stop: String;
+  i,j, k: Integer;
+  S, T, start, stop: String;
   CheckHeader: Boolean;
   
 begin
@@ -1534,8 +1678,7 @@ begin
     start :=  TimeToStr(Time);
   {$ENDIF}
   S := '';
-  CheckHeader := True;
-  if CheckHeader then
+  if Modified then
     begin
       with frmMain do
         begin
@@ -1555,21 +1698,39 @@ begin
         for i := 1 to sg.RowCount - 1 do
           begin
             S := '';
-            for j := 1 to sg.ColCount - 1 do
-              if S = '' then
-                if pos(',', sg.Cells[j, i]) > 1 then
-                  S := '"' + chomp(sg.Cells[j,i]) + '"'
+            for j := 1 to FieldCount - 1 do
+              begin
+                T := T + ',';
+                if S = '' then
+                  if pos(',', sg.Cells[j, i]) > 1 then
+                    S := '"' + chomp(sg.Cells[j,i]) + '"'
+                  else
+                    S := chomp(sg.Cells[j,i])
                 else
-                  S := chomp(sg.Cells[j,i])
-              else
-                if pos(',', sg.Cells[j, i]) > 1 then
-                  S := S + ',"' + chomp(sg.Cells[j,i]) + '"'
-                else
-                  S := S + ',' + chomp(sg.Cells[j,i]);
-            Writeln(F, S);
+                  if pos(',', sg.Cells[j, i]) > 1 then
+                    S := S + ',"' + chomp(sg.Cells[j,i]) + '"'
+                  else
+                    S := S + ',' + chomp(sg.Cells[j,i]);
+              end;
+            if S <> T then
+              Writeln(F, S);
+            
+            if Assigned(Theories) then
+              if Theories.Count > 0 then
+                begin
+                  for k := 0 to Theories.Count - 1 do
+                    begin
+                      if pos(IntToStr(i) + '|t|', Theories[k]) > 0 then
+                        WriteLn(F, '#THEORY' + Copy(Theories[k], lpos('|', Theories[k]) + 1, Length(Theories[k])));
+                      if pos(IntToStr(i) + '|c|', Theories[k]) > 0 then
+                        WriteLn(F, '#COMMENT' + Copy(Theories[k], lpos('|', Theories[k]) + 1, Length(Theories[k])));
+                    end;
+                end;
           end;
+      if (Sender as TMenuItem).Name = 'miFile_Save_And_Complete' then
+        WriteLn(F, '+PAGE,' + IntToStr(StrToInt(edPage.Text) + 1));
+      CloseFile(F);
     end;
-  CloseFile(F);
   {$IFDEF DEBUG}
     stop :=  TimeToStr(Time);
     Writeln('Start - ' + Start + #13 + 'Stop  - ' + stop);
@@ -1594,6 +1755,13 @@ end;
 procedure TfrmMain.miHelp_AboutClick(Sender: TObject);
 begin
   frmAbout.Showmodal;
+end;
+
+procedure TfrmMain.sgSelectCell(Sender: TObject; Col: LongInt; Row: LongInt;
+  var CanSelect: Boolean);
+begin
+  Current_Column := Col;
+  Current_Row := Row;
 end;
 
 

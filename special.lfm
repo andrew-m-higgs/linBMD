@@ -6,7 +6,7 @@ object frmSpecial: TfrmSpecial
   OnCreate = frmSpecialCreate
   OnDeactivate = FormDeactivate
   OnPaint = frmSpecialPaint
-  PixelsPerInch = 101
+  PixelsPerInch = 75
   HorzScrollBar.Page = 300
   VertScrollBar.Page = 300
   Left = 464
@@ -25,7 +25,6 @@ object frmSpecial: TfrmSpecial
     Top = 267
     Width = 301
     object Button1: TButton
-      BorderSpacing.InnerBorder = 2
       Caption = 'Done.'
       OnClick = Button1Click
       TabOrder = 0
@@ -50,6 +49,8 @@ object frmSpecial: TfrmSpecial
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll]
     RowCount = 8
     ScrollBars = ssAutoBoth
+    TabOrder = 1
+    TabStop = True
     TitleFont.Color = clBlack
     TitleFont.Height = -23
     VisibleColCount = 8

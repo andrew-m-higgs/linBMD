@@ -35,7 +35,7 @@ interface
 
 uses
   Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs, Grids,
-  ExtCtrls, Buttons, FileCtrl;
+  ExtCtrls, Buttons;
 
 type
 

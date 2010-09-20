@@ -37,7 +37,7 @@ uses
   Classes, SysUtils; 
 
 Const
-  _VERSION = '0.5';
+  _VERSION = '0.6';
   _EMAIL = 'andrew@higgs.co.za';
   _ICQ = '21610175';
 
