@@ -1,55 +1,55 @@
 object frmCalendar: TfrmCalendar
+  Left = 730
+  Height = 202
+  Top = 276
+  Width = 250
+  HorzScrollBar.Page = 249
+  VertScrollBar.Page = 201
+  ActiveControl = Calendar1
   Caption = 'Select a date'
   ClientHeight = 202
   ClientWidth = 250
   OnShow = frmCalendarShow
-  PixelsPerInch = 101
   Position = poMainFormCenter
-  HorzScrollBar.Page = 249
-  VertScrollBar.Page = 201
-  Left = 726
-  Height = 202
-  Top = 250
-  Width = 250
+  LCLVersion = '0.9.25'
   object Calendar1: TCalendar
+    Height = 175
+    Width = 250
     Align = alClient
-    Date = '4-2-05'
     DateTime = 38387
     DisplaySettings = [dsShowHeadings, dsShowDayNames]
     OnChange = Calendar1Change
-    Height = 175
-    Width = 250
   end
   object Panel1: TPanel
+    Height = 27
+    Top = 175
+    Width = 250
     Align = alBottom
     ClientHeight = 27
     ClientWidth = 250
     FullRepaint = False
     TabOrder = 0
-    Height = 27
-    Top = 175
-    Width = 250
     object SpeedButton1: TSpeedButton
+      Left = 2
+      Height = 22
+      Top = 2
+      Width = 122
       Caption = 'Cancel'
       Color = clBtnFace
       Flat = True
       NumGlyphs = 0
       OnClick = SpeedButton1Click
-      Left = 2
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 125
       Height = 22
       Top = 2
       Width = 122
-    end
-    object SpeedButton2: TSpeedButton
       Caption = 'All Done'
       Color = clBtnFace
       Flat = True
       NumGlyphs = 0
       OnClick = SpeedButton2Click
-      Left = 125
-      Height = 22
-      Top = 2
-      Width = 122
     end
   end
 end

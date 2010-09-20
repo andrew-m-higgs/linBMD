@@ -42,9 +42,8 @@ type
   { TfrmAbout }
 
   TfrmAbout = class(TForm)
+    BitBtn1: TBitBtn;
     Memo1: TMemo;
-    Panel1: TPanel;
-    SpeedButton1: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
   private
@@ -80,7 +79,7 @@ begin
       Add('');
       Add('It is licensed under the GNU/GPL. See http://www.gnu.org/copyleft/gpl.html for licensing details.');
       Add('');
-      Add('For additional assistance or information email me (' + _EMAIL + ') or icq me (' + _ICQ + ').');
+      Add('For additional assistance or information email me (' + _EMAIL + ').');// or icq me (' + _ICQ + ').');
       Add('');
       Add('Happy transcribing.');
     end;

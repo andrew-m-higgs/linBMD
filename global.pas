@@ -37,9 +37,9 @@ uses
   Classes, SysUtils; 
 
 Const
-  _VERSION = '0.7';
+  _VERSION = '0.8';
   _EMAIL = 'andrew@higgs.co.za';
-  _ICQ = '21610175';
+//  _ICQ = '21610175';
 
 var
   Modified, Skip_Age: Boolean;

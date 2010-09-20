@@ -1,16 +1,22 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TfrmAbout','FORMDATA',[
-  'TPF0'#9'TfrmAbout'#8'frmAbout'#13'ActiveControl'#7#5'Memo1'#7'Caption'#6#12
-  +'About linBMD'#12'ClientHeight'#3#130#1#11'ClientWidth'#3#4#1#8'OnCreate'#7
-  +#10'FormCreate'#13'PixelsPerInch'#2'e'#8'Position'#7#16'poMainFormCenter'#18
-  +'HorzScrollBar.Page'#3#3#1#18'VertScrollBar.Page'#3#129#1#4'Left'#3'|'#1#6'H'
-  +'eight'#3#130#1#3'Top'#3#23#1#5'Width'#3#4#1#0#12'TSpeedButton'#12'SpeedButt'
-  +'on1'#7'Caption'#6#9'All done.'#9'NumGlyphs'#2#0#7'OnClick'#7#17'SpeedButton'
-  +'1Click'#4'Left'#2#3#6'Height'#2#22#3'Top'#3'h'#1#5'Width'#3#252#0#0#0#6'TPa'
-  +'nel'#6'Panel1'#10'BevelInner'#7#9'bvLowered'#12'ClientHeight'#3'\'#1#11'Cli'
-  +'entWidth'#3#252#0#11'FullRepaint'#8#8'TabOrder'#2#0#4'Left'#2#3#6'Height'#3
-  +'\'#1#3'Top'#2#4#5'Width'#3#252#0#0#5'TMemo'#5'Memo1'#8'ReadOnly'#9#10'Scrol'
-  +'lBars'#7#14'ssAutoVertical'#8'TabOrder'#2#0#4'Left'#2#9#6'Height'#3'M'#1#3
-  +'Top'#2#8#5'Width'#3#238#0#0#0#0#0
+  'TPF0'#9'TfrmAbout'#8'frmAbout'#4'Left'#3'2'#2#6'Height'#3#130#1#3'Top'#3'-'#1
+  +#5'Width'#3#4#1#18'HorzScrollBar.Page'#3#3#1#18'VertScrollBar.Page'#3#129#1
+  +#13'ActiveControl'#7#5'Memo1'#7'Caption'#6#12'About linBMD'#12'ClientHeight'
+  +#3#130#1#11'ClientWidth'#3#4#1#8'OnCreate'#7#10'FormCreate'#8'Position'#7#16
+  +'poMainFormCenter'#10'LCLVersion'#6#6'0.9.25'#0#7'TBitBtn'#7'BitBtn1'#6'Heig'
+  +'ht'#2#30#3'Top'#3'd'#1#5'Width'#3#4#1#5'Align'#7#8'alBottom'#7'Caption'#6#8
+  +'Al Done.'#9'NumGlyphs'#2#0#7'OnClick'#7#17'SpeedButton1Click'#8'TabOrder'#2
+  +#0#0#0#5'TMemo'#5'Memo1'#6'Height'#3'd'#1#5'Width'#3#4#1#5'Align'#7#8'alClie'
+  +'nt'#13'Lines.Strings'#1#6#5'Memo1'#0#8'TabOrder'#2#1#0#0#0#9'TfrmAbout'#8'f'
+  +'rmAbout'#4'Left'#3'2'#2#6'Height'#3#130#1#3'Top'#3'-'#1#5'Width'#3#4#1#18'H'
+  +'orzScrollBar.Page'#3#3#1#18'VertScrollBar.Page'#3#129#1#13'ActiveControl'#7
+  +#5'Memo1'#7'Caption'#6#12'About linBMD'#12'ClientHeight'#3#130#1#11'ClientWi'
+  +'dth'#3#4#1#8'OnCreate'#7#10'FormCreate'#8'Position'#7#16'poMainFormCenter'
+  +#10'LCLVersion'#6#6'0.9.25'#0#7'TBitBtn'#7'BitBtn1'#6'Height'#2#30#3'Top'#3
+  +'d'#1#5'Width'#3#4#1#5'Align'#7#8'alBottom'#7'Caption'#6#8'Al Done.'#9'NumGl'
+  +'yphs'#2#0#7'OnClick'#7#17'SpeedButton1Click'#8'TabOrder'#2#0#0#0#5'TMemo'#5
+  +'Memo1'#6'Height'#3'd'#1#5'Width'#3#4#1#5'Align'#7#8'alClient'#13'Lines.Stri'
+  +'ngs'#1#6#5'Memo1'#0#8'TabOrder'#2#1#0#0#0
 ]);

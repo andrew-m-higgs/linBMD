@@ -1,44 +1,34 @@
 object frmAbout: TfrmAbout
+  Left = 562
+  Height = 386
+  Top = 301
+  Width = 260
+  HorzScrollBar.Page = 259
+  VertScrollBar.Page = 385
   ActiveControl = Memo1
   Caption = 'About linBMD'
   ClientHeight = 386
   ClientWidth = 260
   OnCreate = FormCreate
-  PixelsPerInch = 101
   Position = poMainFormCenter
-  HorzScrollBar.Page = 259
-  VertScrollBar.Page = 385
-  Left = 380
-  Height = 386
-  Top = 279
-  Width = 260
-  object SpeedButton1: TSpeedButton
-    Caption = 'All done.'
+  LCLVersion = '0.9.25'
+  object BitBtn1: TBitBtn
+    Height = 30
+    Top = 356
+    Width = 260
+    Align = alBottom
+    Caption = 'Al Done.'
     NumGlyphs = 0
     OnClick = SpeedButton1Click
-    Left = 3
-    Height = 22
-    Top = 360
-    Width = 252
-  end
-  object Panel1: TPanel
-    BevelInner = bvLowered
-    ClientHeight = 348
-    ClientWidth = 252
-    FullRepaint = False
     TabOrder = 0
-    Left = 3
-    Height = 348
-    Top = 4
-    Width = 252
-    object Memo1: TMemo
-      ReadOnly = True
-      ScrollBars = ssAutoVertical
-      TabOrder = 0
-      Left = 9
-      Height = 333
-      Top = 8
-      Width = 238
-    end
+  end
+  object Memo1: TMemo
+    Height = 356
+    Width = 260
+    Align = alClient
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 1
   end
 end

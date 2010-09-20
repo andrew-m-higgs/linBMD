@@ -1,20 +1,18 @@
-{ This is an automatically generated lazarus resource file }
-
 LazarusResources.Add('TfrmCalendar','FORMDATA',[
-  'TPF0'#12'TfrmCalendar'#11'frmCalendar'#7'Caption'#6#13'Select a date'#12'Cli'
-  +'entHeight'#3#202#0#11'ClientWidth'#3#250#0#6'OnShow'#7#15'frmCalendarShow'
-  +#13'PixelsPerInch'#2'e'#8'Position'#7#16'poMainFormCenter'#18'HorzScrollBar.'
-  +'Page'#3#249#0#18'VertScrollBar.Page'#3#201#0#4'Left'#3#214#2#6'Height'#3#202
-  +#0#3'Top'#3#250#0#5'Width'#3#250#0#0#9'TCalendar'#9'Calendar1'#5'Align'#7#8
-  +'alClient'#4'Date'#6#6'4-2-05'#8'DateTime'#5#0#0#0#0#0#0#243#149#14'@'#15'Di'
-  +'splaySettings'#11#14'dsShowHeadings'#14'dsShowDayNames'#0#8'OnChange'#7#15
-  +'Calendar1Change'#6'Height'#3#175#0#5'Width'#3#250#0#0#0#6'TPanel'#6'Panel1'
-  +#5'Align'#7#8'alBottom'#12'ClientHeight'#2#27#11'ClientWidth'#3#250#0#11'Ful'
-  +'lRepaint'#8#8'TabOrder'#2#0#6'Height'#2#27#3'Top'#3#175#0#5'Width'#3#250#0#0
-  +#12'TSpeedButton'#12'SpeedButton1'#7'Caption'#6#6'Cancel'#5'Color'#7#9'clBtn'
-  +'Face'#4'Flat'#9#9'NumGlyphs'#2#0#7'OnClick'#7#17'SpeedButton1Click'#4'Left'
-  +#2#2#6'Height'#2#22#3'Top'#2#2#5'Width'#2'z'#0#0#12'TSpeedButton'#12'SpeedBu'
-  +'tton2'#7'Caption'#6#8'All Done'#5'Color'#7#9'clBtnFace'#4'Flat'#9#9'NumGlyp'
-  +'hs'#2#0#7'OnClick'#7#17'SpeedButton2Click'#4'Left'#2'}'#6'Height'#2#22#3'To'
-  +'p'#2#2#5'Width'#2'z'#0#0#0#0
+  'TPF0'#12'TfrmCalendar'#11'frmCalendar'#4'Left'#3#218#2#6'Height'#3#202#0#3'T'
+  +'op'#3#20#1#5'Width'#3#250#0#18'HorzScrollBar.Page'#3#249#0#18'VertScrollBar'
+  +'.Page'#3#201#0#13'ActiveControl'#7#9'Calendar1'#7'Caption'#6#13'Select a da'
+  +'te'#12'ClientHeight'#3#202#0#11'ClientWidth'#3#250#0#6'OnShow'#7#15'frmCale'
+  +'ndarShow'#8'Position'#7#16'poMainFormCenter'#10'LCLVersion'#6#6'0.9.25'#0#9
+  +'TCalendar'#9'Calendar1'#6'Height'#3#175#0#5'Width'#3#250#0#5'Align'#7#8'alC'
+  +'lient'#8'DateTime'#4#243#149#0#0#15'DisplaySettings'#11#14'dsShowHeadings'
+  +#14'dsShowDayNames'#0#8'OnChange'#7#15'Calendar1Change'#0#0#6'TPanel'#6'Pane'
+  +'l1'#6'Height'#2#27#3'Top'#3#175#0#5'Width'#3#250#0#5'Align'#7#8'alBottom'#12
+  +'ClientHeight'#2#27#11'ClientWidth'#3#250#0#11'FullRepaint'#8#8'TabOrder'#2#0
+  +#0#12'TSpeedButton'#12'SpeedButton1'#4'Left'#2#2#6'Height'#2#22#3'Top'#2#2#5
+  +'Width'#2'z'#7'Caption'#6#6'Cancel'#5'Color'#7#9'clBtnFace'#4'Flat'#9#9'NumG'
+  +'lyphs'#2#0#7'OnClick'#7#17'SpeedButton1Click'#0#0#12'TSpeedButton'#12'Speed'
+  +'Button2'#4'Left'#2'}'#6'Height'#2#22#3'Top'#2#2#5'Width'#2'z'#7'Caption'#6#8
+  +'All Done'#5'Color'#7#9'clBtnFace'#4'Flat'#9#9'NumGlyphs'#2#0#7'OnClick'#7#17
+  +'SpeedButton2Click'#0#0#0#0
 ]);

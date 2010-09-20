@@ -45,7 +45,6 @@ type
     Button1: TButton;
     Panel1: TPanel;
     sgSpecial: TStringGrid;
-    procedure FormDeactivate(Sender: TObject);
     procedure frmSpecialCreate(Sender: TObject);
     procedure frmSpecialPaint(Sender: TObject);
     procedure sgSpecialDblClick(Sender: TObject);
@@ -77,14 +76,9 @@ begin
   for i := 0 to 7 do
     for j := 0 to 7 do
       begin
-        sgSpecial.Cells[i,j] := char(k);
+        sgSpecial.Cells[i,j] := UTF8Encode(Char(k));
         k := k + 1;
       end;
-end;
-
-procedure TfrmSpecial.FormDeactivate(Sender: TObject);
-begin
-
 end;
 
 /////////////////////////////////////////////////////////////////////////////////

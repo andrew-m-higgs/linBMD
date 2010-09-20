@@ -2,14 +2,18 @@
 <CONFIG>
   <ProjectOptions>
     <PathDelim Value="/"/>
-    <Version Value="5"/>
+    <Version Value="6"/>
     <General>
       <MainUnit Value="0"/>
       <IconPath Value="./"/>
       <TargetFileExt Value=""/>
-      <Title Value="linbmd"/>
-      <ActiveEditorIndexAtStart Value="0"/>
+      <ActiveEditorIndexAtStart Value="2"/>
     </General>
+    <VersionInfo>
+      <ProjectVersion Value=""/>
+      <Language Value=""/>
+      <CharSet Value=""/>
+    </VersionInfo>
     <PublishOptions>
       <Version Value="2"/>
       <IgnoreBinaries Value="False"/>
@@ -22,304 +26,145 @@
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="2">
+    <RequiredPackages Count="1">
       <Item1>
         <PackageName Value="LCL"/>
-        <MinVersion Major="1" Valid="True"/>
       </Item1>
-      <Item2>
-        <PackageName Value="FCL"/>
-        <MinVersion Major="1" Valid="True"/>
-      </Item2>
     </RequiredPackages>
-    <Units Count="17">
+    <Units Count="10">
       <Unit0>
         <Filename Value="linbmd.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="linBMD"/>
-        <CursorPos X="1" Y="1"/>
+        <UnitName Value="linbmd"/>
+        <CursorPos X="43" Y="17"/>
         <TopLine Value="1"/>
-        <EditorIndex Value="3"/>
-        <UsageCount Value="201"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
         <ComponentName Value="frmMain"/>
         <IsPartOfProject Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <ResourceFilename Value="main.lrs"/>
         <UnitName Value="main"/>
-        <CursorPos X="38" Y="1244"/>
-        <TopLine Value="1358"/>
+        <CursorPos X="33" Y="189"/>
+        <TopLine Value="171"/>
         <EditorIndex Value="0"/>
-        <UsageCount Value="201"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
-        <Filename Value="special.pas"/>
-        <ComponentName Value="frmSpecial"/>
+        <Filename Value="about.pas"/>
+        <ComponentName Value="frmAbout"/>
+        <HasResources Value="True"/>
         <IsPartOfProject Value="True"/>
-        <ResourceFilename Value="special.lrs"/>
-        <UnitName Value="special"/>
-        <CursorPos X="30" Y="38"/>
-        <TopLine Value="45"/>
-        <UsageCount Value="201"/>
+        <ResourceBaseClass Value="Form"/>
+        <ResourceFilename Value="about.lrs"/>
+        <UnitName Value="about"/>
+        <CursorPos X="84" Y="82"/>
+        <TopLine Value="47"/>
+        <EditorIndex Value="3"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
+        <Filename Value="cal.pas"/>
+        <ComponentName Value="frmCalendar"/>
+        <HasResources Value="True"/>
+        <IsPartOfProject Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <ResourceFilename Value="cal.lrs"/>
+        <UnitName Value="cal"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="42"/>
+      </Unit3>
+      <Unit4>
         <Filename Value="global.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="global"/>
-        <CursorPos X="18" Y="40"/>
-        <TopLine Value="1"/>
-        <EditorIndex Value="2"/>
-        <UsageCount Value="201"/>
-        <Loaded Value="True"/>
-      </Unit3>
-      <Unit4>
-        <Filename Value="about.pas"/>
-        <ComponentName Value="frmAbout"/>
-        <IsPartOfProject Value="True"/>
-        <ResourceFilename Value="about.lrs"/>
-        <UnitName Value="about"/>
-        <CursorPos X="3" Y="74"/>
-        <TopLine Value="33"/>
-        <EditorIndex Value="1"/>
-        <UsageCount Value="204"/>
+        <CursorPos X="3" Y="42"/>
+        <TopLine Value="6"/>
+        <EditorIndex Value="4"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
-        <Filename Value="cal.pas"/>
-        <ComponentName Value="frmCalendar"/>
-        <IsPartOfProject Value="True"/>
-        <ResourceFilename Value="cal.lrs"/>
-        <UnitName Value="cal"/>
-        <CursorPos X="38" Y="4"/>
-        <TopLine Value="21"/>
-        <UsageCount Value="237"/>
-      </Unit5>
-      <Unit6>
         <Filename Value="help.pas"/>
         <ComponentName Value="frmHelp"/>
+        <HasResources Value="True"/>
         <IsPartOfProject Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <ResourceFilename Value="help.lrs"/>
         <UnitName Value="help"/>
-        <CursorPos X="39" Y="3"/>
-        <TopLine Value="19"/>
-        <UsageCount Value="225"/>
+        <CursorPos X="13" Y="3"/>
+        <TopLine Value="1"/>
+        <EditorIndex Value="5"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="../lazarus/designer/jitforms.pp"/>
+        <UnitName Value="JITForms"/>
+        <CursorPos X="3" Y="888"/>
+        <TopLine Value="873"/>
+        <UsageCount Value="10"/>
       </Unit6>
       <Unit7>
-        <Filename Value="/usr/src/pascal/lazarus/examples/listboxtest.pp"/>
-        <UnitName Value="ListBoxTest"/>
-        <CursorPos X="38" Y="121"/>
-        <TopLine Value="96"/>
-        <UsageCount Value="9"/>
+        <Filename Value="special.pas"/>
+        <ComponentName Value="frmSpecial"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <ResourceFilename Value="special.lrs"/>
+        <UnitName Value="special"/>
+        <CursorPos X="19" Y="72"/>
+        <TopLine Value="65"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="17"/>
+        <Loaded Value="True"/>
       </Unit7>
       <Unit8>
-        <Filename Value="/usr/src/pascal/lazarus/lcl/extctrls.pp"/>
-        <UnitName Value="ExtCtrls"/>
-        <CursorPos X="37" Y="722"/>
-        <TopLine Value="699"/>
-        <UsageCount Value="47"/>
+        <Filename Value="special.lfm"/>
+        <CursorPos X="29" Y="6"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="9"/>
+        <SyntaxHighlighter Value="LFM"/>
       </Unit8>
       <Unit9>
-        <Filename Value="/usr/src/pascal/lazarus/lcl/stdctrls.pp"/>
-        <UnitName Value="StdCtrls"/>
-        <CursorPos X="14" Y="1265"/>
-        <TopLine Value="1220"/>
-        <UsageCount Value="47"/>
+        <Filename Value="../fpc/rtl/objpas/classes/classesh.inc"/>
+        <CursorPos X="14" Y="1375"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="10"/>
       </Unit9>
-      <Unit10>
-        <Filename Value="/usr/src/pascal/lazarus/components/turbopower_ipro/ipanim.pas"/>
-        <UnitName Value="IpAnim"/>
-        <CursorPos X="1" Y="1"/>
-        <TopLine Value="1"/>
-        <UsageCount Value="8"/>
-      </Unit10>
-      <Unit11>
-        <Filename Value="/usr/src/pascal/lazarus/lcl/include/customcombobox.inc"/>
-        <CursorPos X="1" Y="1"/>
-        <TopLine Value="53"/>
-        <UsageCount Value="8"/>
-      </Unit11>
-      <Unit12>
-        <Filename Value="/usr/src/pascal/lazarus/lcl/interfaces/gtk2/gtk2wsstdctrls.pp"/>
-        <UnitName Value="Gtk2WSStdCtrls"/>
-        <CursorPos X="36" Y="40"/>
-        <TopLine Value="1"/>
-        <UsageCount Value="8"/>
-      </Unit12>
-      <Unit13>
-        <Filename Value="/usr/src/pascal/lazarus/lcl/interfaces/gtk/gtkwsstdctrls.pp"/>
-        <UnitName Value="GtkWSStdCtrls"/>
-        <CursorPos X="1" Y="763"/>
-        <TopLine Value="210"/>
-        <UsageCount Value="8"/>
-      </Unit13>
-      <Unit14>
-        <Filename Value="/usr/src/pascal/lazarus/lcl/grids.pas"/>
-        <UnitName Value="Grids"/>
-        <CursorPos X="17" Y="577"/>
-        <TopLine Value="561"/>
-        <UsageCount Value="13"/>
-      </Unit14>
-      <Unit15>
-        <Filename Value="/usr/src/pascal/lazarus/lcl/dialogs.pp"/>
-        <UnitName Value="Dialogs"/>
-        <CursorPos X="38" Y="419"/>
-        <TopLine Value="388"/>
-        <EditorIndex Value="4"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-      </Unit15>
-      <Unit16>
-        <Filename Value="/usr/src/pascal/lazarus/ide/lazarus.pp"/>
-        <UnitName Value="Lazarus"/>
-        <CursorPos X="1" Y="114"/>
-        <TopLine Value="85"/>
-        <UsageCount Value="9"/>
-      </Unit16>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
-      <Position1>
-        <Filename Value="main.pas"/>
-        <Caret Line="1758" Column="3" TopLine="1713"/>
-      </Position1>
-      <Position2>
-        <Filename Value="main.pas"/>
-        <Caret Line="165" Column="23" TopLine="159"/>
-      </Position2>
-      <Position3>
-        <Filename Value="main.pas"/>
-        <Caret Line="164" Column="20" TopLine="137"/>
-      </Position3>
-      <Position4>
-        <Filename Value="main.pas"/>
-        <Caret Line="548" Column="1" TopLine="511"/>
-      </Position4>
-      <Position5>
-        <Filename Value="main.pas"/>
-        <Caret Line="605" Column="20" TopLine="565"/>
-      </Position5>
-      <Position6>
-        <Filename Value="main.pas"/>
-        <Caret Line="641" Column="31" TopLine="613"/>
-      </Position6>
-      <Position7>
-        <Filename Value="main.pas"/>
-        <Caret Line="643" Column="37" TopLine="615"/>
-      </Position7>
-      <Position8>
-        <Filename Value="main.pas"/>
-        <Caret Line="662" Column="34" TopLine="634"/>
-      </Position8>
-      <Position9>
-        <Filename Value="main.pas"/>
-        <Caret Line="664" Column="32" TopLine="636"/>
-      </Position9>
-      <Position10>
-        <Filename Value="main.pas"/>
-        <Caret Line="668" Column="56" TopLine="640"/>
-      </Position10>
-      <Position11>
-        <Filename Value="main.pas"/>
-        <Caret Line="708" Column="31" TopLine="680"/>
-      </Position11>
-      <Position12>
-        <Filename Value="main.pas"/>
-        <Caret Line="712" Column="24" TopLine="684"/>
-      </Position12>
-      <Position13>
-        <Filename Value="main.pas"/>
-        <Caret Line="737" Column="31" TopLine="709"/>
-      </Position13>
-      <Position14>
-        <Filename Value="main.pas"/>
-        <Caret Line="739" Column="37" TopLine="711"/>
-      </Position14>
-      <Position15>
-        <Filename Value="main.pas"/>
-        <Caret Line="565" Column="1" TopLine="524"/>
-      </Position15>
-      <Position16>
-        <Filename Value="main.pas"/>
-        <Caret Line="525" Column="7" TopLine="504"/>
-      </Position16>
-      <Position17>
-        <Filename Value="main.pas"/>
-        <Caret Line="526" Column="14" TopLine="510"/>
-      </Position17>
-      <Position18>
-        <Filename Value="main.pas"/>
-        <Caret Line="566" Column="31" TopLine="527"/>
-      </Position18>
-      <Position19>
-        <Filename Value="main.pas"/>
-        <Caret Line="550" Column="1" TopLine="522"/>
-      </Position19>
-      <Position20>
-        <Filename Value="main.pas"/>
-        <Caret Line="548" Column="38" TopLine="545"/>
-      </Position20>
-      <Position21>
-        <Filename Value="main.pas"/>
-        <Caret Line="999" Column="1" TopLine="899"/>
-      </Position21>
-      <Position22>
-        <Filename Value="main.pas"/>
-        <Caret Line="591" Column="1" TopLine="545"/>
-      </Position22>
-      <Position23>
-        <Filename Value="main.pas"/>
-        <Caret Line="1250" Column="3" TopLine="1248"/>
-      </Position23>
-      <Position24>
-        <Filename Value="main.pas"/>
-        <Caret Line="618" Column="3" TopLine="612"/>
-      </Position24>
-      <Position25>
-        <Filename Value="main.pas"/>
-        <Caret Line="962" Column="3" TopLine="960"/>
-      </Position25>
-      <Position26>
-        <Filename Value="main.pas"/>
-        <Caret Line="951" Column="1" TopLine="924"/>
-      </Position26>
-      <Position27>
-        <Filename Value="main.pas"/>
-        <Caret Line="566" Column="1" TopLine="547"/>
-      </Position27>
-      <Position28>
-        <Filename Value="main.pas"/>
-        <Caret Line="1262" Column="3" TopLine="1260"/>
-      </Position28>
-      <Position29>
-        <Filename Value="main.pas"/>
-        <Caret Line="918" Column="1" TopLine="897"/>
-      </Position29>
-      <Position30>
-        <Filename Value="main.pas"/>
-        <Caret Line="596" Column="22" TopLine="469"/>
-      </Position30>
-    </JumpHistory>
+    <JumpHistory Count="0" HistoryIndex="-1"/>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="5"/>
-    <SearchPaths>
-      <SrcPath Value="$(LazarusDir)/lcl/;$(LazarusDir)/lcl/interfaces/$(LCLWidgetType)/"/>
-    </SearchPaths>
     <CodeGeneration>
-      <SmartLinkUnit Value="True"/>
-      <Generate Value="Smaller"/>
+      <Generate Value="Faster"/>
     </CodeGeneration>
     <Linking>
-      <Debugging>
-        <UseLineInfoUnit Value="False"/>
-        <StripSymbols Value="True"/>
-      </Debugging>
-      <LinkSmart Value="True"/>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
     </Linking>
     <Other>
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="2">
+      <Item1>
+        <Name Value="ECodetoolError"/>
+      </Item1>
+      <Item2>
+        <Name Value="EFOpenError"/>
+      </Item2>
+    </Exceptions>
+  </Debugging>
 </CONFIG>

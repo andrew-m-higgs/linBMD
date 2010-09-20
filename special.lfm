@@ -1,62 +1,50 @@
 object frmSpecial: TfrmSpecial
-  ActiveControl = Button1
+  Left = 568
+  Height = 301
+  Top = 198
+  Width = 290
+  HelpType = htKeyword
+  HorzScrollBar.Page = 289
+  VertScrollBar.Page = 300
+  ActiveControl = sgSpecial
   Caption = 'Choose a special character...'
   ClientHeight = 301
-  ClientWidth = 301
+  ClientWidth = 290
   OnCreate = frmSpecialCreate
-  OnDeactivate = FormDeactivate
   OnPaint = frmSpecialPaint
-  PixelsPerInch = 75
-  HorzScrollBar.Page = 300
-  VertScrollBar.Page = 300
-  Left = 464
-  Height = 301
-  Top = 299
-  Width = 301
-  HelpType = htKeyword
+  LCLVersion = '0.9.25'
   object Panel1: TPanel
+    Height = 34
+    Top = 267
+    Width = 290
     Align = alBottom
     Caption = 'Panel1'
     ClientHeight = 34
-    ClientWidth = 301
+    ClientWidth = 290
     FullRepaint = False
     TabOrder = 0
-    Height = 34
-    Top = 267
-    Width = 301
     object Button1: TButton
-      Caption = 'Done.'
-      OnClick = Button1Click
-      TabOrder = 0
       Left = 4
       Height = 25
       Top = 6
       Width = 292
+      Caption = 'Done.'
+      OnClick = Button1Click
+      TabOrder = 0
     end
   end
   object sgSpecial: TStringGrid
+    Height = 267
+    Width = 290
     Align = alClient
-    Color = clBtnFace
     ColCount = 8
-    DefaultColWidth = 25
-    DefaultRowHeight = 24
+    DefaultColWidth = 35
+    DefaultRowHeight = 32
     FixedColor = clBtnFace
     FixedCols = 0
     FixedRows = 0
-    Font.Color = clBlack
-    Font.Height = -25
-    GridLineWidth = 0
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll]
     RowCount = 8
-    ScrollBars = ssAutoBoth
     TabOrder = 1
-    TabStop = True
-    TitleFont.Color = clBlack
-    TitleFont.Height = -23
-    VisibleColCount = 8
-    VisibleRowCount = 8
-    OnDblClick = sgSpecialDblClick
-    Height = 267
-    Width = 301
   end
 end

@@ -1,35 +1,32 @@
 object frmHelp: TfrmHelp
+  Left = 464
+  Height = 369
+  Top = 536
+  Width = 468
+  HorzScrollBar.Page = 467
+  VertScrollBar.Page = 368
   ActiveControl = memo_Tips
   Caption = 'Basic Help'
   ClientHeight = 369
   ClientWidth = 468
   OnActivate = frmHelpActivate
-  PixelsPerInch = 101
   Position = poMainFormCenter
-  HorzScrollBar.Page = 467
-  VertScrollBar.Page = 368
-  Left = 304
-  Height = 369
-  Top = 137
-  Width = 468
+  LCLVersion = '0.9.25'
   object Notebook1: TNotebook
-    Align = alClient
-    PageIndex = 0
     Height = 369
     Width = 468
+    Align = alClient
+    PageIndex = 0
+    TabOrder = 0
     object pgTips: TPage
       Caption = 'Tips and Tricks'
-      ClientWidth = 464
-      ClientHeight = 339
-      Left = 2
-      Height = 339
-      Top = 28
-      Width = 464
+      ClientWidth = 462
+      ClientHeight = 332
       object memo_Tips: TMemo
+        Height = 332
+        Width = 462
         Align = alClient
         TabOrder = 0
-        Height = 339
-        Width = 464
       end
     end
   end

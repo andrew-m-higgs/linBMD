@@ -618,7 +618,6 @@ St. Thomas|5b
 Stafford|6b
 Staines|3a
 Stamford|7a
-Stanley|12v|user
 Stepney|1c
 Steyning|2b
 Stockbridge|2c
