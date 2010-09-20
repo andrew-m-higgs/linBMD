@@ -1,0 +1,636 @@
+Aberayron|27
+Abergavenny|26
+Aberystwyth|27
+Abingdon|6
+Alcester|16
+Alderbury|8
+Alnwick|25
+Alresford|7
+Alston|25
+Alton|7
+Altrincham|19
+Alverstoke|7
+Amersham|6
+Amesbury|8
+Ampthill|6
+Andover|7
+Anglesey|27
+Ashbourne|19
+Ashby de la Zouch|15
+Ashton under Lyne|20
+Askrigg|24
+Aston|16
+Atcham|18
+Atherstone|16
+Auckland|24
+Axbridge|10
+Axminster|10
+Aylesbury|6
+Aylsham|13
+Bakewell|19
+Bala|27
+Banbury|16
+Bangor|27
+Barnet|6
+Barnsley|22
+Barnstaple|10
+Barrow upon Soar|15
+Barton upon Irwell|20
+Basford|15
+Basingstoke|7
+Bath|11
+Battle|7
+Beaminster|8
+Bedale|24
+Bedford|6
+Bedminster|11
+Bedwelty|26
+Belford|25
+Bellingham|25
+Belper|19
+Berkhampstead|6
+Bermondsey|4
+Berwick|25
+Bethnal Green|2
+Beverley|23
+Bicester|16
+Bideford|10
+Biggleswade|6
+Billericay|12
+Billesdon|15
+Bingham|15
+Birmingham|16
+Bishops Stortford|6
+Blaby|15
+Blackburn|21
+Blandford|8
+Blean|5
+Blofield|13
+Blything|13
+Bodmin|9
+Bolton|21
+Bootle|25
+Bosmere|12
+Boston|14
+Bourne|14
+Brackley|15
+Bradfield|6
+Bradford upon Avon|8
+Bradford|23
+Braintree|12
+Brampton|25
+Brecknock|26
+Brentford|3
+Bridge|5
+Bridgend|26
+Bridgnorth|18
+Bridgwater|10
+Bridlington|23
+Bridport|8
+Brighton|7
+Bristol|11
+Brixworth|15
+Bromley|5
+Bromsgrove|18
+Bromyard|26
+Buckingham|6
+Builth|26
+Burnley|21
+Burton upon Trent|17
+Bury|21
+Bury St Edmunds|13
+Caistor|14
+Calne|8
+Camberwell|4
+Cambridge|14
+Camelford|9
+Canterbury|5
+Cardiff|26
+Cardigan|27
+Carlisle|25
+Carmarthen|26
+Carnarvon|27
+Castle Ward|25
+Catherington|7
+Caxton|14
+Chapel en le Frith|19
+Chard|10
+Cheadle|17
+Chelmsford|12
+Chelsea|3
+Cheltenham|11
+Chepstow|26
+Chertsey|4
+Chester le Street|24
+Chesterfield|19
+Chesterton|14
+Chichester|7
+Chippenham|8
+Chipping Norton|16
+Chipping Sodbury|11
+Chorley|21
+Chorlton|20
+Christchurch|8
+Church Stretton|18
+Cirencester|11
+City of London|2
+Cleobury Mortimer|18
+Clerkenwell|3
+Clifton|11
+Clitheroe|21
+Clun|18
+Clutton|11
+Cockermouth|25
+Colchester|12
+Congleton|19
+Conway|27
+Cookham|6
+Corwen|27
+Cosford|12
+Coventry|16
+Cranbrook|5
+Crediton|10
+Crickhowell|26
+Cricklade|8
+Croydon|4
+Cuckfield|7
+Darlington|24
+Dartford|5
+Daventry|15
+Depwade|13
+Derby|19
+Devizes|8
+Dewsbury|22
+Docking|13
+Dolgelly|27
+Doncaster|22
+Dorchester|8
+Dorking|4
+Dover|5
+Downham|13
+Driffield|23
+Droitwich|18
+Droxford|7
+Dudley|18
+Dunmow|12
+Durham|24
+Dursley|11
+Easington|24
+Easingwold|24
+East Ashford|5
+Eastbourne|7
+East Grinstead|7
+Easthampstead|6
+East London|2
+East Retford|15
+Eastry|5
+East Stonehouse|9
+East Ward|25
+Ecclesall Bierlow|22
+Ecclesfield|22
+Edmonton|3
+Elham|5
+Ellesmere|18
+Ely|14
+Epping|12
+Epsom|4
+Erpingham|13
+Eton|6
+Evesham|18
+Exeter|10
+Falmouth|9
+Fareham|7
+Faringdon|6
+Farnborough|4
+Farnham|4
+Faversham|5
+Ffestiniog|27
+Flegg|13
+Foleshill|16
+Fordingbridge|8
+Forehoe|13
+Freebridge Lynn|13
+Frome|10
+Fylde|21
+Gainsborough|14
+Garstang|21
+Gateshead|24
+Glanford Brigg|14
+Glendale|25
+Gloucester|11
+Godstone|4
+Goole|23
+Gower|26
+Grantham|14
+Gravesend|5
+Great Boughton|19
+Greenwich|5
+Guildford|4
+Guiltcross|13
+Guisborough|24
+Hackney|3
+Hailsham|7
+Halifax|22
+Halstead|12
+Haltwhistle|25
+Hambledon|4
+Hampstead|3
+Hardingstone|15
+Hartismere|13
+Hartley Wintney|7
+Haslingden|21
+Hastings|7
+Hatfield|6
+Havant|7
+Haverfordwest|26
+Hay|26
+Hayfield|19
+Headington|16
+Helmsley|24
+Helston|9
+Hemel Hempstead|6
+Hemsworth|22
+Hendon|3
+Henley|16
+Henstead|13
+Hereford|26
+Hertford|6
+Hexham|25
+Highworth|8
+Hinckley|15
+Hitchin|6
+Holbeach|14
+Holborn|2
+Hollingbourne|5
+Holsworthy|9
+Holywell|27
+Honiton|10
+Hoo|5
+Horncastle|14
+Horsham|7
+Houghton le Spring|24
+Howden|23
+Hoxne|13
+Huddersfield|22
+Hull|22
+Hungerford|6
+Hunslet|23
+Huntingdon|14
+Ipswich|12
+Isle of Wight|8
+Islington|3
+Keighley|23
+Kendal|25
+Kensington|3
+Kettering|15
+Keynsham|11
+Kidderminster|18
+Kingsbridge|9
+Kingsclere|7
+Kings Lynn|13
+Kings Norton|18
+Kingston|4
+Kington|26
+Knaresborough|23
+Knighton|26
+Lambeth|4
+Lampeter|27
+Lancaster|21
+Langport|10
+Launceston|9
+Ledbury|26
+Leeds|23
+Leek|17
+Leicester|15
+Leigh|21
+Leighton Buzzard|6
+Leominster|26
+Lewes|7
+Lewisham|5
+Lexden|12
+Leyburn|24
+Lichfield|17
+Lincoln|14
+Linton|14
+Liskeard|9
+Liverpool|20
+Llandilofawr|26
+Llandovery|26
+Llanelly|26
+Llanfyllin|27
+Llanrwst|27
+Loddon|13
+Longtown|25
+Loughborough|15
+Louth|14
+Ludlow|18
+Luton|6
+Lutterworth|15
+Lymington|8
+Macclesfield|19
+Machynlleth|27
+Madeley|18
+Maidstone|5
+Maldon|12
+Malling|5
+Malmesbury|8
+Malton|24
+Manchester|20
+Mansfield|15
+Market Bosworth|15
+Market Drayton|18
+Market Harborough|15
+Marlborough|8
+Martley|18
+Marylebone|1
+Medway|5
+Melksham|8
+Melton Mowbray|15
+Mere|8
+Meriden|16
+Merthyr Tydfil|26
+Midhurst|7
+Mildenhall|13
+Milton|5
+Mitford|13
+Monmouth|26
+Montgomery|27
+Morpeth|25
+Mutford|13
+Nantwich|19
+Narberth|26
+Neath|26
+Newark|15
+Newbury|6
+Newcastle in Emlyn|26
+Newcastle under Lyme|17
+Newcastle upon Tyne|25
+Newent|11
+New Forest|8
+Newhaven|7
+Newington|4
+Newmarket|14
+Newport M|26
+Newport S|18
+Newport Pagnell|6
+Newton Abbot|10
+Newtown|27
+Northallerton|24
+Northampton|15
+North Aylesford|5
+Northleach|11
+Northwich|19
+North Witchford|14
+Norwich|13
+Nottingham|15
+Nuneaton|16
+Oakham|15
+Okehampton|10
+Oldham|20
+Ongar|12
+Ormskirk|21
+Orsett|12
+Oswestry|18
+Otley|23
+Oundle|15
+Oxford|16
+Pancras|1
+Pateley Bridge|23
+Patrington|23
+Pembroke|26
+Penkridge|17
+Penrith|25
+Penzance|9
+Pershore|18
+Peterborough|15
+Petersfield|7
+Petworth|7
+Pewsey|8
+Pickering|24
+Plomesgate|12
+Plymouth|9
+Plympton St Mary|9
+Pocklington|23
+Pontefract|22
+Pontypool|26
+Poole|8
+Poplar|2
+Portsea Island|7
+Potterspury|15
+Prescot|20
+Presteigne|26
+Preston|21
+Pwllheli|27
+Radford|15
+Reading|6
+Redruth|9
+Reeth|24
+Reigate|4
+Rhayader|26
+Richmond Sry|4
+Richmond Yk|24
+Ringwood|8
+Ripon|23
+Risbridge|12
+Rochdale|21
+Rochford|12
+Romford|12
+Romney Marsh|5
+Romsey|7
+Ross|26
+Rothbury|25
+Rotherham|22
+Rotherhithe|4
+Royston|6
+Rugby|16
+Runcorn|19
+Ruthin|27
+Rye|7
+Saddleworth|23
+Saffron Walden|12
+Salford|20
+Salisbury|8
+Samford|12
+Scarborough|24
+Scilly Isles|9
+Sculcoates|22
+Sedburgh|23
+Selby|23
+Settle|23
+Sevenoaks|5
+Shaftesbury|8
+Shardlow|19
+Sheffield|22
+Sheppey|5
+Shepton Mallet|10
+Sherborne|8
+Shifnal|18
+Shipston on Stour|11
+Shitlington|6
+Shoreditch|2
+Shrewsbury|18
+Skipton|23
+Skirlaugh|22
+Sleaford|14
+Solihull|16
+Southam|16
+Southampton|7
+South Molton|10
+South Shields|24
+South Stoneham|7
+Southwell|15
+Spalding|14
+Spilsby|14
+St Albans|6
+St Asaph|27
+St Austell|9
+St Columb|9
+St Faiths|13
+St George Hanover Square|1
+St George in the East|2
+St George Southwark|4
+St Germans|9
+St Giles|1
+St Ives|14
+St James Westminster|1
+St Luke|2
+St Martin|1
+St Martin in the Fields|1
+St Marylebone|1
+St Neots|14
+St Olave Southwark|4
+St Pancras|1
+St Saviour Southwark|4
+St Thomas|10
+Stafford|17
+Staines|3
+Stamford|14
+Stepney|2
+Steyning|7
+Stockbridge|7
+Stockport|19
+Stockton|24
+Stoke Damerel|9
+Stoke upon Trent|17
+Stokesley|24
+Stone|17
+Stourbridge|18
+Stow|12
+Stow on the Wold|11
+Strand|1
+Stratford upon Avon|16
+Stratton|9
+Stroud|11
+Sturminster|8
+Sudbury|12
+Sunderland|24
+Swaffham|13
+Swansea|26
+Swindon|8
+Tadcaster|23
+Tamworth|16
+Taunton|10
+Tavistock|9
+Teesdale|24
+Tenbury|18
+Tendring|12
+Tenterden|5
+Tetbury|11
+Tewkesbury|11
+Thakeham|7
+Thame|16
+Thanet|5
+Thetford|13
+Thingoe|13
+Thirsk|24
+Thornbury|11
+Thorne|23
+Thrapston|15
+Ticehurst|7
+Tisbury|8
+Tiverton|10
+Todmorden|21
+Torrington|10
+Totnes|9
+Towcester|15
+Tregaron|27
+Truro|9
+Tunbridge|5
+Tunstead|13
+Tynemouth|25
+Uckfield|7
+Ulverston|25
+Uppingham|15
+Upton upon Severn|18
+Uttoxeter|17
+Uxbridge|3
+Wakefield|22
+Wallingford|6
+Walsall|17
+Walsingham|13
+Wandsworth|4
+Wangford|13
+Wantage|6
+Ware|6
+Wareham|8
+Warminster|8
+Warrington|20
+Warwick|16
+Watford|6
+Wayland|13
+Weardale|24
+Wellingborough|15
+Wellington Som|10
+Wellington Sal|18
+Wells|10
+Wem|18
+Weobley|26
+West Ashford|5
+Westbourne|7
+West Bromwich|18
+Westbury|8
+Westbury on Severn|11
+West Derby|20
+West Ham|12
+Westhampnett|7
+West London|2
+Westminster|1
+Westminster St Margaret|1
+West Ward|25
+Weymouth|8
+Wheatenhurst|11
+Whitby|24
+Whitchurch H|7
+Whitechapel|2
+Whitehaven|25
+Whittlesey|14
+Wigan|21
+Wigton|25
+Williton|10
+Wilton|8
+Wimborne|8
+Wincanton|10
+Winchcomb|11
+Winchester|7
+Windsor|6
+Winslow|6
+Wirral|19
+Wisbech|14
+Witham|12
+Witney|16
+Woburn|6
+Wokingham|6
+Wolstanton|17
+Wolverhampton|17
+Woodbridge|12
+Woodstock|16
+Worcester|18
+Worksop|15
+Worsley|20
+Worthing|7
+Wortley|22
+Wrexham|27
+Wycombe|6
+Yarmouth|13
+Yeovil|10
+York|23

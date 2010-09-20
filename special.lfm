@@ -1,0 +1,61 @@
+object frmSpecial: TfrmSpecial
+  ActiveControl = Button1
+  Caption = 'Choose a special character...'
+  ClientHeight = 301
+  ClientWidth = 301
+  OnCreate = frmSpecialCreate
+  OnDeactivate = FormDeactivate
+  OnPaint = frmSpecialPaint
+  PixelsPerInch = 101
+  HorzScrollBar.Page = 300
+  VertScrollBar.Page = 300
+  Left = 464
+  Height = 301
+  Top = 299
+  Width = 301
+  HelpType = htKeyword
+  object Panel1: TPanel
+    Align = alBottom
+    Caption = 'Panel1'
+    ClientHeight = 34
+    ClientWidth = 301
+    FullRepaint = False
+    TabOrder = 0
+    Height = 34
+    Top = 267
+    Width = 301
+    object Button1: TButton
+      BorderSpacing.InnerBorder = 2
+      Caption = 'Done.'
+      OnClick = Button1Click
+      TabOrder = 0
+      Left = 4
+      Height = 25
+      Top = 6
+      Width = 292
+    end
+  end
+  object sgSpecial: TStringGrid
+    Align = alClient
+    Color = clBtnFace
+    ColCount = 8
+    DefaultColWidth = 25
+    DefaultRowHeight = 24
+    FixedColor = clBtnFace
+    FixedCols = 0
+    FixedRows = 0
+    Font.Color = clBlack
+    Font.Height = -25
+    GridLineWidth = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll]
+    RowCount = 8
+    ScrollBars = ssAutoBoth
+    TitleFont.Color = clBlack
+    TitleFont.Height = -23
+    VisibleColCount = 8
+    VisibleRowCount = 8
+    OnDblClick = sgSpecialDblClick
+    Height = 267
+    Width = 301
+  end
+end

@@ -1,0 +1,7 @@
+1. Pressing 'ESC' in any cell will change the cells contents to that of the cell above. Very useful when transcribing a string of John's.
+
+2. To select an item from the pick list, simply press 'CTRL' and the number of the item at the same time. In the name column the item is added with a space and focus remains in the cell until enter is pressed. This allows you to add other names.
+
+3. If the pick list only contains one item, and it is all you need for the current cell, press 'ENTER' and the cell contents is updated and focus progresses to the next cell.
+
+4. Press 'F9' to view a list of special characters. Double click the required one and the cell is updated.
